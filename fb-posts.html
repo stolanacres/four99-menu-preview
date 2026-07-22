@@ -1,0 +1,57 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Four 99 · Facebook Posts</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Inter:wght@400;500;600;700;800;900&display=swap');
+* { box-sizing:border-box; margin:0; padding:0; }
+html, body { background:#0D0D0D; color:#FFF8E7; font-family:'Inter',sans-serif;
+  -webkit-font-smoothing:antialiased; }
+.page { position:relative; width:1200px; height:1200px; overflow:hidden; background:#0D0D0D;
+  display:flex; flex-direction:column; }
+.bgfill { position:absolute; top:0; left:0; width:1200px; height:1200px; background:#0D0D0D; z-index:-1; }
+
+/* racing checker strip — Race City nod */
+.checker { height:13.3px; width:100%;
+  background:repeating-linear-gradient(90deg,rgba(255,248,231,0.85) 0 13.3px,#0D0D0D 13.3px 26.7px); }
+.rule { height:6.7px; width:100%; background:linear-gradient(90deg,#00BCD4,#FF2D78,#FFD700); }
+
+.pad { padding:62.2px 62.2px; }
+.grow { flex:1; display:flex; flex-direction:column; justify-content:center; }
+
+.kicker { font-weight:900; font-size:28.9px; letter-spacing:7.8px; text-transform:uppercase;
+  color:#00BCD4; }
+.kicker.pink { color:#FF2D78; } .kicker.yellow { color:#FFD700; }
+.head { font-family:'Bowlby One SC',sans-serif; line-height:1.0; color:#FFF8E7;
+  font-size:82.2px; letter-spacing:1.1px; }
+.head.sm { font-size:60.0px; } .head.xl { font-size:115.6px; }
+.head { text-shadow:0 0 20.0px rgba(255,255,255,0.10); }
+.head.pink { color:#FF2D78; text-shadow:0 0 24.4px rgba(255,45,120,0.45); } .head.teal { color:#00BCD4; text-shadow:0 0 24.4px rgba(0,188,212,0.45); } .head.yellow { color:#FFD700; text-shadow:0 0 24.4px rgba(255,215,0,0.40); }
+.body { font-size:37.8px; line-height:1.4; color:rgba(255,248,231,0.82); }
+.body.lg { font-size:46.7px; }
+
+.price-badge { display:inline-block; font-family:'Bowlby One SC',sans-serif;
+  font-size:64.4px; color:#0D0D0D; background:#FFD700; padding:13.3px 33.3px;
+  border-radius:1110.0px; }
+.pill { display:inline-block; font-weight:900; font-size:26.7px; letter-spacing:3.3px;
+  text-transform:uppercase; color:#0D0D0D; background:#00BCD4; padding:11.1px 26.7px;
+  border-radius:1110.0px; }
+.pill.pink { background:#FF2D78; color:#FFF8E7; } .pill.yellow { background:#FFD700; }
+
+.photo { position:relative; width:100%; background:
+  repeating-linear-gradient(45deg, rgba(255,255,255,0.030) 0 15.6px, rgba(255,255,255,0.012) 15.6px 31.1px);
+  border:4.4px dashed rgba(255,248,231,0.30); display:flex; align-items:center;
+  justify-content:center; }
+.photo-label { font-weight:800; font-size:31.1px; letter-spacing:4.4px; text-transform:uppercase;
+  color:rgba(255,248,231,0.55); text-align:center; line-height:1.5; }
+
+.logo-sm { height:82.2px; width:auto; display:block; }
+.logo-md { height:133.3px; width:auto; display:block; margin:0 auto; }
+.footline { font-weight:800; font-size:24.4px; letter-spacing:6.7px; text-transform:uppercase;
+  color:#FFD700; text-align:center; }
+.row { display:flex; align-items:center; justify-content:space-between; gap:22.2px; }
+.stars { font-size:48.9px; color:#FFD700; letter-spacing:6.7px; }
+.quote { font-family:'Bowlby One SC',sans-serif; font-size:51.1px; line-height:1.22; color:#FFF8E7; }
+.vs { font-family:'Bowlby One SC',sans-serif; font-size:62.2px; color:#FFD700; text-align:center; }
+.half { flex:1; display:flex; align-items:center; justify-content:center; text-align:center;
+  padding:31.1px; }
+.half.teal { background:rgba(0,188,212,0.16); } .half.pink { background:rgba(255,45,120,0.16); }
+.stack-gap > * + * { margin-top:24.4px; }
+.center { text-align:center; }
+</style></head><body><div class="page" data-document-role="page" data-label="Event announcement"><div class="bgfill"></div><div class="photo" style="height:624px"><div class="photo-label">Drop your photo here</div></div><div class="rule"></div><div class="pad grow stack-gap"><div class="kicker ">Come see us</div><div class="head">We will be at the event</div><div class="body">Add the date and the spot here.</div></div><div class="pad" style="padding-top:0"><div class="row"><img class="logo-sm" src="logo.png"><div class="footline">Four 99 · Mooresville NC</div></div></div><div class="checker"></div></div><div class="page" data-document-role="page" data-label="Community update"><div class="bgfill"></div><div class="checker"></div><div class="pad grow stack-gap center"><img class="logo-md" src="logo.png"><div class="kicker teal">A note from the truck</div><div class="head teal">Say it here</div><div class="body lg">Room for the longer post underneath.</div></div><div class="rule"></div><div class="pad" style="padding-top:0;padding-bottom:0"><div class="footline" style="padding:22px 0">Four 99 · Mooresville NC · Race City USA</div></div></div><div class="page" data-document-role="page" data-label="Menu changes"><div class="bgfill"></div><div class="checker"></div><div class="pad grow stack-gap center"><img class="logo-md" src="logo.png"><div class="kicker pink">Menu update</div><div class="head pink">Something changed</div><div class="body lg">Tell them what is new and what is gone.</div></div><div class="rule"></div><div class="pad" style="padding-top:0;padding-bottom:0"><div class="footline" style="padding:22px 0">Four 99 · Mooresville NC · Race City USA</div></div></div><div class="page" data-document-role="page" data-label="Weekly hours"><div class="bgfill"></div><div class="checker"></div><div class="pad grow stack-gap center"><img class="logo-md" src="logo.png"><div class="kicker yellow">This week</div><div class="head yellow">11am to 7pm</div><div class="body lg">Add the days and the spots.</div></div><div class="rule"></div><div class="pad" style="padding-top:0;padding-bottom:0"><div class="footline" style="padding:22px 0">Four 99 · Mooresville NC · Race City USA</div></div></div><div class="page" data-document-role="page" data-label="Customer review"><div class="bgfill"></div><div class="checker"></div><div class="pad grow stack-gap"><div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><div class="quote">&ldquo;Best burger I have had in Mooresville. Worth the wait.&rdquo;</div><div class="body">A very happy customer</div></div><div class="pad" style="padding-top:0"><div class="row"><img class="logo-sm" src="logo.png"><div class="footline">Four 99 · Mooresville NC</div></div></div><div class="rule"></div></div><div class="page" data-document-role="page" data-label="Local partnership"><div class="bgfill"></div><div class="photo" style="height:624px"><div class="photo-label">Drop your photo here</div></div><div class="rule"></div><div class="pad grow stack-gap"><div class="kicker teal">Good company</div><div class="head">Teaming up local</div><div class="body">Say who and why it matters.</div></div><div class="pad" style="padding-top:0"><div class="row"><img class="logo-sm" src="logo.png"><div class="footline">Four 99 · Mooresville NC</div></div></div><div class="checker"></div></div><div class="page" data-document-role="page" data-label="Location update"><div class="bgfill"></div><div class="rule"></div><div class="pad grow stack-gap center"><img class="logo-md" src="logo.png"><div class="kicker yellow">We moved</div><div class="head xl teal">New spot</div><div class="body lg">Come find us at the new place.</div></div><div class="checker"></div></div><div class="page" data-document-role="page" data-label="Anniversary"><div class="bgfill"></div><div class="checker"></div><div class="pad grow stack-gap center"><img class="logo-md" src="logo.png"><div class="kicker yellow">Thank you</div><div class="head yellow">One year of this</div><div class="body lg">Every order, every regular. Thank you.</div></div><div class="rule"></div><div class="pad" style="padding-top:0;padding-bottom:0"><div class="footline" style="padding:22px 0">Four 99 · Mooresville NC · Race City USA</div></div></div></body></html>
