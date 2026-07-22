@@ -9,7 +9,7 @@ html, body { background:#0D0D0D; color:#FFF8E7; font-family:'Inter',sans-serif;
 
 /* ---------- field treatments (full-bleed backgrounds) ---------- */
 .field-grad { position:absolute; inset:0; z-index:-1;
-  background:linear-gradient(135deg,#00BCD4 0%,#FF2D78 55%,#FFD700 130%); }
+  background:linear-gradient(135deg,#00BCD4 0%,#FFD700 52%,#FF2D78 100%); }
 .field-teal { position:absolute; inset:0; z-index:-1;
   background:linear-gradient(160deg,#00BCD4 0%,#046b7c 100%); }
 .field-pink { position:absolute; inset:0; z-index:-1;
@@ -30,8 +30,9 @@ html, body { background:#0D0D0D; color:#FFF8E7; font-family:'Inter',sans-serif;
 .checker.thin { height:28.4px;
   background:repeating-linear-gradient(90deg,#FFD700 0 28.4px,#0D0D0D 28.4px 56.9px); }
 .checker.cream { background:repeating-linear-gradient(90deg,#FFF8E7 0 46.2px,#0D0D0D 46.2px 92.4px); }
-.rule { height:14.2px; width:100%; background:linear-gradient(90deg,#00BCD4,#FF2D78,#FFD700); }
-.gradband { background:linear-gradient(120deg,#00BCD4 0%,#FF2D78 100%); }
+.rule { height:14.2px; width:100%; background:linear-gradient(90deg,#00BCD4,#FFD700,#FF2D78); }
+.gradband { background:linear-gradient(120deg,#00BCD4 0%,#046b7c 100%); }
+.gradband.pink { background:linear-gradient(120deg,#FF2D78 0%,#a8103f 100%); }
 
 /* ---------- type ---------- */
 .pad { padding:96.0px; }
@@ -86,6 +87,10 @@ html, body { background:#0D0D0D; color:#FFF8E7; font-family:'Inter',sans-serif;
 .quote { font-family:'Bowlby One SC',sans-serif; font-size:81.8px; line-height:1.22; color:#FFF8E7; }
 .half { flex:1; display:flex; align-items:center; justify-content:center; text-align:center;
   padding:49.8px; }
+.cf { position:absolute; z-index:-1; opacity:0.55; }
+.cf.circle { border-radius:50%; }
+.cf.half { border-radius:1776.0px 1776.0px 0 0; }
+.cf.bar { border-radius:1776.0px; }
 .stack-gap > * + * { margin-top:39.1px; }
 .center { text-align:center; }
 </style></head><body><div class="page" data-document-role="page" data-label="Pop-up event"><div class="bgfill"></div><div class="field-grad"></div><div class="stripes"></div><div class="checker thin"></div><div class="grow" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:86px;padding:0 115px"><img src="logo-primary.png" style="height:562px;width:auto;flex-shrink:0"><div style="text-align:left"><div class="kicker cream">Pop-up</div><div class="head sm" style="margin-top:30px">We will be there</div><div class="body">Add the date, time and spot.</div></div></div><div class="checker thin"></div></div><div class="page" data-document-role="page" data-label="Food festival"><div class="bgfill"></div><div class="field-teal"></div><div class="stripes"></div><div class="checker thin"></div><div class="grow" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:86px;padding:0 115px"><img src="logo-primary.png" style="height:562px;width:auto;flex-shrink:0"><div style="text-align:left"><div class="kicker cream">Festival</div><div class="head sm" style="margin-top:30px">Come eat with us</div><div class="body">Add the festival and the date.</div></div></div><div class="checker thin"></div></div><div class="page" data-document-role="page" data-label="Private catering"><div class="bgfill"></div><div class="field-pink"></div><div class="stripes"></div><div class="checker thin"></div><div class="grow" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:86px;padding:0 115px"><img src="logo-primary.png" style="height:562px;width:auto;flex-shrink:0"><div style="text-align:left"><div class="kicker cream">Book the truck</div><div class="head sm" style="margin-top:30px">Catering available</div><div class="body">Message us to lock a date.</div></div></div><div class="checker thin"></div></div></body></html>
