@@ -3,55 +3,89 @@
 * { box-sizing:border-box; margin:0; padding:0; }
 html, body { background:#0D0D0D; color:#FFF8E7; font-family:'Inter',sans-serif;
   -webkit-font-smoothing:antialiased; }
-.page { position:relative; width:1920px; height:1005px; overflow:hidden; background:#0D0D0D;
+.page { position:relative; width:1920px; height:1005px; overflow:hidden; background:transparent; z-index:0; isolation:isolate;
   display:flex; flex-direction:column; }
 .bgfill { position:absolute; top:0; left:0; width:1920px; height:1005px; background:#0D0D0D; z-index:-1; }
 
-/* racing checker strip — Race City nod */
-.checker { height:21.3px; width:100%;
-  background:repeating-linear-gradient(90deg,rgba(255,248,231,0.85) 0 21.3px,#0D0D0D 21.3px 42.7px); }
-.rule { height:10.7px; width:100%; background:linear-gradient(90deg,#00BCD4,#FF2D78,#FFD700); }
+/* ---------- field treatments (full-bleed backgrounds) ---------- */
+.field-grad { position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(135deg,#00BCD4 0%,#FF2D78 55%,#FFD700 130%); }
+.field-teal { position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(160deg,#00BCD4 0%,#046b7c 100%); }
+.field-pink { position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(160deg,#FF2D78 0%,#8d0b3c 100%); }
+.field-yellow { position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(160deg,#FFD700 0%,#c9a300 100%); }
+/* diagonal speed stripes overlay */
+.stripes { position:absolute; inset:0; z-index:-1; opacity:0.14;
+  background:repeating-linear-gradient(115deg, rgba(0,0,0,0.9) 0 28.4px, transparent 28.4px 92.4px); }
+/* radial neon glow behind a centred badge */
+.glow { position:absolute; left:50%; top:533.3px; transform:translate(-50%,-50%);
+  width:1351.1px; height:1351.1px; z-index:-1; border-radius:50%;
+  background:radial-gradient(circle, rgba(0,188,212,0.42) 0%, rgba(255,45,120,0.18) 45%, transparent 70%); }
 
-.pad { padding:99.6px 99.6px; }
+/* ---------- bands ---------- */
+.checker { height:46.2px; width:100%;
+  background:repeating-linear-gradient(90deg,#FFD700 0 46.2px,#0D0D0D 46.2px 92.4px); }
+.checker.thin { height:28.4px;
+  background:repeating-linear-gradient(90deg,#FFD700 0 28.4px,#0D0D0D 28.4px 56.9px); }
+.checker.cream { background:repeating-linear-gradient(90deg,#FFF8E7 0 46.2px,#0D0D0D 46.2px 92.4px); }
+.rule { height:14.2px; width:100%; background:linear-gradient(90deg,#00BCD4,#FF2D78,#FFD700); }
+.gradband { background:linear-gradient(120deg,#00BCD4 0%,#FF2D78 100%); }
+
+/* ---------- type ---------- */
+.pad { padding:96.0px; }
 .grow { flex:1; display:flex; flex-direction:column; justify-content:center; }
-
 .kicker { font-weight:900; font-size:46.2px; letter-spacing:12.4px; text-transform:uppercase;
   color:#00BCD4; }
 .kicker.pink { color:#FF2D78; } .kicker.yellow { color:#FFD700; }
-.head { font-family:'Bowlby One SC',sans-serif; line-height:1.0; color:#FFF8E7;
-  font-size:131.6px; letter-spacing:1.8px; }
+.kicker.cream { color:#FFF8E7; } .kicker.dark { color:rgba(0,0,0,0.72); }
+.head { font-family:'Bowlby One SC',sans-serif; line-height:1.02; color:#FFF8E7;
+  font-size:131.6px; letter-spacing:1.8px; text-shadow:0 0 46.2px rgba(255,255,255,0.16); }
 .head.sm { font-size:96.0px; } .head.xl { font-size:184.9px; }
-.head { text-shadow:0 0 32.0px rgba(255,255,255,0.10); }
-.head.pink { color:#FF2D78; text-shadow:0 0 39.1px rgba(255,45,120,0.45); } .head.teal { color:#00BCD4; text-shadow:0 0 39.1px rgba(0,188,212,0.45); } .head.yellow { color:#FFD700; text-shadow:0 0 39.1px rgba(255,215,0,0.40); }
-.body { font-size:60.4px; line-height:1.4; color:rgba(255,248,231,0.82); }
+.head.pink { color:#FF2D78; text-shadow:0 0 46.2px rgba(255,45,120,0.65); }
+.head.teal { color:#00BCD4; text-shadow:0 0 46.2px rgba(0,188,212,0.65); }
+.head.yellow { color:#FFD700; text-shadow:0 0 46.2px rgba(255,215,0,0.55); }
+.head.dark { color:#0D0D0D; text-shadow:none; }
+.body { font-size:60.4px; line-height:1.4; color:rgba(255,248,231,0.86); }
 .body.lg { font-size:74.7px; }
+.body.dark { color:rgba(0,0,0,0.78); }
 
 .price-badge { display:inline-block; font-family:'Bowlby One SC',sans-serif;
-  font-size:103.1px; color:#0D0D0D; background:#FFD700; padding:21.3px 53.3px;
-  border-radius:1776.0px; }
+  font-size:106.7px; color:#0D0D0D; background:#FFD700; padding:21.3px 56.9px;
+  border-radius:1776.0px; box-shadow:0 0 60.4px rgba(255,215,0,0.55); }
+.price-badge.dark { background:#0D0D0D; color:#FFD700; box-shadow:0 0 53.3px rgba(0,0,0,0.5); }
 .pill { display:inline-block; font-weight:900; font-size:42.7px; letter-spacing:5.3px;
-  text-transform:uppercase; color:#0D0D0D; background:#00BCD4; padding:17.8px 42.7px;
+  text-transform:uppercase; color:#0D0D0D; background:#00BCD4; padding:17.8px 46.2px;
   border-radius:1776.0px; }
-.pill.pink { background:#FF2D78; color:#FFF8E7; } .pill.yellow { background:#FFD700; }
 
-.photo { position:relative; width:100%; background:
-  repeating-linear-gradient(45deg, rgba(255,255,255,0.030) 0 24.9px, rgba(255,255,255,0.012) 24.9px 49.8px);
-  border:7.1px dashed rgba(255,248,231,0.30); display:flex; align-items:center;
-  justify-content:center; }
-.photo-label { font-weight:800; font-size:49.8px; letter-spacing:7.1px; text-transform:uppercase;
-  color:rgba(255,248,231,0.55); text-align:center; line-height:1.5; }
+/* ---------- photo placeholder, neon framed ---------- */
+.photo { position:relative; width:100%; overflow:hidden;
+  background:
+    repeating-linear-gradient(115deg, rgba(255,255,255,0.05) 0 21.3px, rgba(255,255,255,0.015) 21.3px 71.1px),
+    radial-gradient(circle at 50% 40%, rgba(0,188,212,0.16), transparent 65%);
+  border:8.9px solid rgba(0,188,212,0.55);
+  box-shadow:inset 0 0 106.7px rgba(255,45,120,0.20), 0 0 53.3px rgba(0,188,212,0.30);
+  display:flex; align-items:center; justify-content:center; }
+.photo-label { font-weight:900; font-size:46.2px; letter-spacing:8.9px; text-transform:uppercase;
+  color:rgba(255,248,231,0.72); text-align:center; line-height:1.6;
+  text-shadow:0 0 32.0px rgba(0,0,0,0.8); }
 
 .logo-sm { height:131.6px; width:auto; display:block; }
-.logo-md { height:213.3px; width:auto; display:block; margin:0 auto; }
-.footline { font-weight:800; font-size:39.1px; letter-spacing:10.7px; text-transform:uppercase;
-  color:#FFD700; text-align:center; }
+.badge-lg { width:764.4px; height:auto; display:block; margin:0 auto; }
+.badge-md { width:533.3px; height:auto; display:block; margin:0 auto; }
+.footline { font-weight:900; font-size:39.1px; letter-spacing:10.7px; text-transform:uppercase;
+  color:#FFD700; }
+.footline.dark { color:#0D0D0D; }
 .row { display:flex; align-items:center; justify-content:space-between; gap:35.6px; }
-.stars { font-size:78.2px; color:#FFD700; letter-spacing:10.7px; }
+.barblack { background:#0D0D0D; padding:39.1px 81.8px; }
+.stars { font-size:81.8px; color:#FFD700; letter-spacing:14.2px;
+  text-shadow:0 0 39.1px rgba(255,215,0,0.6); }
+.qmark { font-family:'Bowlby One SC',sans-serif; font-size:266.7px; color:#FF2D78; line-height:0.7;
+  text-shadow:0 0 71.1px rgba(255,45,120,0.7); }
 .quote { font-family:'Bowlby One SC',sans-serif; font-size:81.8px; line-height:1.22; color:#FFF8E7; }
-.vs { font-family:'Bowlby One SC',sans-serif; font-size:99.6px; color:#FFD700; text-align:center; }
 .half { flex:1; display:flex; align-items:center; justify-content:center; text-align:center;
   padding:49.8px; }
-.half.teal { background:rgba(0,188,212,0.16); } .half.pink { background:rgba(255,45,120,0.16); }
 .stack-gap > * + * { margin-top:39.1px; }
 .center { text-align:center; }
-</style></head><body><div class="page" data-document-role="page" data-label="Pop-up event"><div class="bgfill"></div><div class="rule"></div><div class="grow" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:76px;padding:0 96px"><img src="logo.png" style="height:422px;width:auto;flex-shrink:0"><div style="text-align:left"><div class="kicker yellow">Pop-up</div><div class="head sm " style="margin-top:30px">We will be there</div><div class="body">Add the date, time and spot.</div></div></div><div class="checker"></div></div><div class="page" data-document-role="page" data-label="Food festival"><div class="bgfill"></div><div class="rule"></div><div class="grow" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:76px;padding:0 96px"><img src="logo.png" style="height:422px;width:auto;flex-shrink:0"><div style="text-align:left"><div class="kicker yellow">Festival</div><div class="head sm yellow" style="margin-top:30px">Come eat with us</div><div class="body">Add the festival and the date.</div></div></div><div class="checker"></div></div><div class="page" data-document-role="page" data-label="Private catering"><div class="bgfill"></div><div class="rule"></div><div class="grow" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:76px;padding:0 96px"><img src="logo.png" style="height:422px;width:auto;flex-shrink:0"><div style="text-align:left"><div class="kicker yellow">Book the truck</div><div class="head sm pink" style="margin-top:30px">Catering available</div><div class="body">Message us to lock a date.</div></div></div><div class="checker"></div></div></body></html>
+</style></head><body><div class="page" data-document-role="page" data-label="Pop-up event"><div class="bgfill"></div><div class="field-grad"></div><div class="stripes"></div><div class="checker thin"></div><div class="grow" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:86px;padding:0 115px"><img src="logo-primary.png" style="height:562px;width:auto;flex-shrink:0"><div style="text-align:left"><div class="kicker cream">Pop-up</div><div class="head sm" style="margin-top:30px">We will be there</div><div class="body">Add the date, time and spot.</div></div></div><div class="checker thin"></div></div><div class="page" data-document-role="page" data-label="Food festival"><div class="bgfill"></div><div class="field-teal"></div><div class="stripes"></div><div class="checker thin"></div><div class="grow" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:86px;padding:0 115px"><img src="logo-primary.png" style="height:562px;width:auto;flex-shrink:0"><div style="text-align:left"><div class="kicker cream">Festival</div><div class="head sm" style="margin-top:30px">Come eat with us</div><div class="body">Add the festival and the date.</div></div></div><div class="checker thin"></div></div><div class="page" data-document-role="page" data-label="Private catering"><div class="bgfill"></div><div class="field-pink"></div><div class="stripes"></div><div class="checker thin"></div><div class="grow" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:86px;padding:0 115px"><img src="logo-primary.png" style="height:562px;width:auto;flex-shrink:0"><div style="text-align:left"><div class="kicker cream">Book the truck</div><div class="head sm" style="margin-top:30px">Catering available</div><div class="body">Message us to lock a date.</div></div></div><div class="checker thin"></div></div></body></html>
