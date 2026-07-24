@@ -1,0 +1,91 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Four 99 Import Test</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Inter:wght@400;500;600;700;800;900&display=swap');
+* { box-sizing:border-box; margin:0; padding:0; }
+html, body { background:#0D0D0D; color:#FFF8E7; font-family:'Inter',sans-serif;
+  -webkit-font-smoothing:antialiased; }
+.page { position:relative; width:1080px; height:1080px; overflow:hidden; background:transparent;
+  z-index:0; isolation:isolate; display:flex; flex-direction:column; }
+.bgfill { position:absolute; top:0; left:0; width:1080px; height:1080px; background:#0D0D0D; z-index:-1; }
+
+.field-grad { position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(135deg,#00BCD4 0%,#FFD700 52%,#FF2D78 100%); }
+.field-teal { position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(160deg,#00BCD4 0%,#046b7c 100%); }
+.field-pink { position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(160deg,#FF2D78 0%,#8d0b3c 100%); }
+.field-yellow { position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(160deg,#FFD700 0%,#c9a300 100%); }
+.stripes { position:absolute; inset:0; z-index:-1; opacity:0.14;
+  background:repeating-linear-gradient(115deg, rgba(0,0,0,0.9) 0 16.0px, transparent 16.0px 52.0px); }
+.glow { position:absolute; left:50%; top:300.0px; transform:translate(-50%,-50%);
+  width:760.0px; height:760.0px; z-index:-1; border-radius:50%;
+  background:radial-gradient(circle, rgba(0,188,212,0.42) 0%, rgba(255,45,120,0.18) 45%, transparent 70%); }
+
+/* full-bleed photo + legibility scrim */
+.fullphoto { position:absolute; inset:0; z-index:-1; }
+.fullphoto img { width:100%; height:100%; object-fit:cover; object-position:50% 42%; display:block; }
+.scrim { position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.72) 22%,
+             rgba(13,13,13,0.18) 48%, rgba(13,13,13,0) 72%); }
+.scrim.soft { background:linear-gradient(to top, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.35) 45%, transparent 75%); }
+
+.checker { height:26.0px; width:100%;
+  background:repeating-linear-gradient(90deg,#FFD700 0 26.0px,#0D0D0D 26.0px 52.0px); }
+.checker.thin { height:16.0px;
+  background:repeating-linear-gradient(90deg,#FFD700 0 16.0px,#0D0D0D 16.0px 32.0px); }
+.rule { height:8.0px; width:100%; background:linear-gradient(90deg,#00BCD4,#FFD700,#FF2D78); }
+.gradband { background:linear-gradient(120deg,#00BCD4 0%,#046b7c 100%); }
+.gradband.pink { background:linear-gradient(120deg,#FF2D78 0%,#a8103f 100%); }
+
+.pad { padding:54.0px; }
+.grow { flex:1; display:flex; flex-direction:column; justify-content:center; }
+.bottom { flex:1; display:flex; flex-direction:column; justify-content:flex-end; }
+.kicker { font-weight:900; font-size:26.0px; letter-spacing:7.0px; text-transform:uppercase;
+  color:#00BCD4; }
+.kicker.pink { color:#FF2D78; } .kicker.yellow { color:#FFD700; }
+.kicker.cream { color:#FFF8E7; } .kicker.dark { color:rgba(0,0,0,0.72); }
+.head { font-family:'Bowlby One SC',sans-serif; line-height:1.02; color:#FFF8E7;
+  font-size:74.0px; letter-spacing:1.0px; text-shadow:0 3.0px 26.0px rgba(0,0,0,0.75); }
+.head.sm { font-size:54.0px; } .head.xl { font-size:104.0px; }
+.head.pink { color:#FF2D78; } .head.teal { color:#00BCD4; } .head.yellow { color:#FFD700; }
+.head.dark { color:#0D0D0D; text-shadow:none; }
+.body { font-size:34.0px; line-height:1.4; color:rgba(255,248,231,0.90);
+  text-shadow:0 2.0px 14.0px rgba(0,0,0,0.7); }
+.body.lg { font-size:42.0px; }
+.body.dark { color:rgba(0,0,0,0.78); text-shadow:none; }
+
+.price-badge { display:inline-block; font-family:'Bowlby One SC',sans-serif;
+  font-size:60.0px; color:#0D0D0D; background:#FFD700; padding:12.0px 32.0px;
+  border-radius:999.0px; box-shadow:0 0 34.0px rgba(255,215,0,0.55); }
+.pill { display:inline-block; font-weight:900; font-size:24.0px; letter-spacing:3.0px;
+  text-transform:uppercase; color:#0D0D0D; background:#00BCD4; padding:10.0px 26.0px;
+  border-radius:999.0px; }
+
+/* framed inline photo */
+.photo { position:relative; width:100%; overflow:hidden;
+  border:5.0px solid rgba(0,188,212,0.55);
+  box-shadow:0 0 30.0px rgba(0,188,212,0.30); }
+.photo img { width:100%; height:100%; object-fit:cover; object-position:50% 45%; display:block; }
+.photo.flush { border:none; box-shadow:none; }
+
+.logo-sm { height:74.0px; width:auto; display:block; }
+.badge-lg { width:430.0px; height:auto; display:block; margin:0 auto; }
+.badge-md { width:300.0px; height:auto; display:block; margin:0 auto; }
+.badge-corner { position:absolute; top:40.0px; right:40.0px; width:190.0px; height:auto; }
+.footline { font-weight:900; font-size:22.0px; letter-spacing:6.0px; text-transform:uppercase;
+  color:#FFD700; }
+.footline.dark { color:#0D0D0D; }
+.row { display:flex; align-items:center; justify-content:space-between; gap:20.0px; }
+.barblack { background:#0D0D0D; padding:22.0px 46.0px; }
+.stars { font-size:46.0px; color:#FFD700; letter-spacing:8.0px; }
+.qmark { font-family:'Bowlby One SC',sans-serif; font-size:150.0px; color:#FF2D78; line-height:0.7; }
+.quote { font-family:'Bowlby One SC',sans-serif; font-size:46.0px; line-height:1.22; color:#FFF8E7; }
+.half { flex:1; display:flex; align-items:center; justify-content:center; text-align:center;
+  padding:28.0px; position:relative; }
+.cf { position:absolute; z-index:-1; opacity:0.55; }
+.cf.circle { border-radius:50%; }
+.cf.half { border-radius:999.0px 999.0px 0 0; }
+.cf.bar { border-radius:999.0px; }
+.stack-gap > * + * { margin-top:22.0px; }
+.center { text-align:center; }
+</style></head><body><div class="page" data-document-role="page" data-label="Photo full test"><div class="bgfill"></div><div class="photo flush" style="height:626px"><img src="img/food-burger.jpg"></div><div class="rule"></div><div class="pad grow stack-gap"><div class="kicker yellow">On the menu</div><div class="head">Cheeseburger</div><div class="body">Cheese, lettuce, tomato, red onion, pickle and house-made burger sauce.</div><div><span class="price-badge">$16</span></div></div><div class="barblack"><div class="row"><img class="logo-sm" src="logo.png"><div class="footline">Four 99 · Mooresville NC</div></div></div><div class="checker"></div></div><div class="page" data-document-role="page" data-label="Loud field test"><div class="bgfill"></div><div class="field-yellow"></div><div class="stripes"></div><div class="cf circle" style="left:4%;top:7%;width:30.0px;height:30.0px;background:#FF2D78"></div><div class="cf circle" style="left:93%;top:13%;width:20.0px;height:20.0px;background:#FFD700"></div><div class="cf half" style="left:89%;top:86%;width:34.0px;height:17.0px;background:#00BCD4"></div><div class="checker thin"></div><div class="pad grow stack-gap center"><div class="kicker dark">New on the menu</div><div class="head xl dark">Your new item</div><div class="body lg dark">Say what is in it.</div></div><div class="barblack"><div class="row"><img class="logo-sm" src="logo.png"><div class="footline">Four 99 · Mooresville NC</div></div></div><div class="checker thin"></div></div><div class="page" data-document-role="page" data-label="Photo band test"><div class="bgfill"></div><div class="photo flush" style="height:496px"><img src="img/food-hothoney.jpg"></div><div class="gradband pad grow stack-gap"><div class="kicker cream">Why beef tallow</div><div class="head sm">Cooked the old-school way</div><div class="body">No seed oils. That is the whole trick.</div></div><div class="barblack"><div class="row"><img class="logo-sm" src="logo.png"><div class="footline">Four 99 · Mooresville NC</div></div></div><div class="checker"></div></div></body></html>
